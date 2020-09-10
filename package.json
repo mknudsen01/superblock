@@ -6,6 +6,9 @@
   "repository": "https://github.com/mknudsen01/superblock",
   "author": "Matthew Knudsen <mknudsen01@gmail.com> (https://matthewknudsen.com/)",
   "license": "MIT",
+  "scripts": {
+    "build": "./node_modules/.bin/babel src --out-file index.js"
+  },
   "private": false,
   "dependencies": {
     "react": "16.13.1",
