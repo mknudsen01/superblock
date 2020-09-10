@@ -10,7 +10,8 @@
     "build": "./node_modules/.bin/babel src --out-dir dist"
   },
   "private": false,
-  "dependencies": {
+  "dependencies": {},
+  "peerDependencies": {
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-intersection-observer": "8.28.4",
