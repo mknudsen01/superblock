@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = exports.ExportableImage = exports.Image = void 0;
+exports["default"] = exports.Image = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -141,6 +141,5 @@ var ExportableImage = function ExportableImage(props) {
   return /*#__PURE__*/_react["default"].createElement(Image, finalizedProps);
 };
 
-exports.ExportableImage = ExportableImage;
 var _default = ExportableImage;
 exports["default"] = _default;

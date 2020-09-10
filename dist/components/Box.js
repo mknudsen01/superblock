@@ -33,13 +33,13 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Box = _styledComponents["default"].div(_templateObject(), (0, _styledSystem.compose)(_styledSystem.typography, _styledSystem.space, _styledSystem.color, _styledSystem.flexbox, _styledSystem.background, _styledSystem.shadow, _styledSystem.layout));
+var BoxNoForward = _styledComponents["default"].div(_templateObject(), (0, _styledSystem.compose)(_styledSystem.typography, _styledSystem.space, _styledSystem.color, _styledSystem.flexbox, _styledSystem.background, _styledSystem.shadow, _styledSystem.layout));
 
-exports.Box = Box;
-var Forwarded = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
-  return /*#__PURE__*/_react["default"].createElement(Box, _extends({
+var Box = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
+  return /*#__PURE__*/_react["default"].createElement(BoxNoForward, _extends({
     ref: ref
   }, props));
 });
-var _default = Forwarded;
+exports.Box = Box;
+var _default = Box;
 exports["default"] = _default;

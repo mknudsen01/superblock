@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports["default"] = exports.P = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -33,12 +33,13 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var P = _styledComponents["default"].p(_templateObject(), _styledSystem.typography, _styledSystem.space, _styledSystem.color, _styledSystem.layout);
+var PNoForward = _styledComponents["default"].p(_templateObject(), _styledSystem.typography, _styledSystem.space, _styledSystem.color, _styledSystem.layout);
 
-var ForwardedP = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
-  return /*#__PURE__*/_react["default"].createElement(P, _extends({
+var P = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
+  return /*#__PURE__*/_react["default"].createElement(PNoForward, _extends({
     ref: ref
   }, props));
 });
-var _default = ForwardedP;
+exports.P = P;
+var _default = P;
 exports["default"] = _default;
