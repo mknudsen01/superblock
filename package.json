@@ -1,5 +1,5 @@
 {
-  "name": "@mknudsen01/superblock",
+  "name": "superblock",
   "version": "0.0.3",
   "description": "public components to use exported code from superblock",
   "main": "index.js",
