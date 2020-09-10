@@ -2,12 +2,12 @@
   "name": "superblock",
   "version": "0.0.5",
   "description": "public components to use exported code from superblock",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": "https://github.com/mknudsen01/superblock",
   "author": "Matthew Knudsen <mknudsen01@gmail.com> (https://matthewknudsen.com/)",
   "license": "MIT",
   "scripts": {
-    "build": "./node_modules/.bin/babel src --out-file index.js"
+    "build": "./node_modules/.bin/babel src --out-dir dist"
   },
   "private": false,
   "dependencies": {
