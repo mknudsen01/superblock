@@ -1,0 +1,10 @@
+{
+  "name": "superblock",
+  "version": "0.0.1",
+  "description": "public components to use exported code from superblock",
+  "main": "index.js",
+  "repository": "https://github.com/mknudsen01/superblock",
+  "author": "Matthew Knudsen <mknudsen01@gmail.com> (https://matthewknudsen.com/)",
+  "license": "MIT",
+  "private": false
+}
