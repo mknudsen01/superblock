@@ -73,7 +73,7 @@ export const Image = (props) => {
   );
 };
 
-export const ExportableImage = (props) => {
+const ExportableImage = (props) => {
   const finalizedProps = useBreakpointAwareProps({
     props,
     breakpointProps: [

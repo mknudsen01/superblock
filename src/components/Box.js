@@ -11,10 +11,12 @@ import {
   layout,
 } from "styled-system";
 
-export const Box = styled.div`
+const BoxNoForward = styled.div`
   ${compose(typography, space, color, flexbox, background, shadow, layout)}
 `;
 
-const Forwarded = forwardRef((props, ref) => <Box ref={ref} {...props} />);
+export const Box = forwardRef((props, ref) => (
+  <BoxNoForward ref={ref} {...props} />
+));
 
-export default Forwarded;
+export default Box;
