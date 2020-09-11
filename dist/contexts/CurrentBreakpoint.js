@@ -36,7 +36,8 @@ var CurrentBreakpointProvider = function CurrentBreakpointProvider(_ref) {
       breakpoints = _ref$breakpoints === void 0 ? ["40em", "52em", "64em"] : _ref$breakpoints,
       _ref$defaultWidth = _ref.defaultWidth,
       defaultWidth = _ref$defaultWidth === void 0 ? 320 : _ref$defaultWidth,
-      children = _ref.children;
+      children = _ref.children,
+      observedWindow = _ref.observedWindow;
 
   var _useState = (0, _react.useState)(defaultWidth),
       _useState2 = _slicedToArray(_useState, 2),
@@ -49,14 +50,16 @@ var CurrentBreakpointProvider = function CurrentBreakpointProvider(_ref) {
       setCurrentBreakpoint = _useState4[1];
 
   (0, _react.useEffect)(function () {
+    var windowToUse = observedWindow || window;
+
     function handleResize() {
-      setWidth(window.innerWidth);
+      setWidth(windowToUse.innerWidth);
     }
 
-    window.addEventListener("resize", handleResize);
+    windowToUse.addEventListener("resize", handleResize);
     handleResize();
     return function () {
-      window.removeEventListener("resize", handleResize);
+      windowToUse.removeEventListener("resize", handleResize);
     };
   }, []);
   (0, _react.useEffect)(function () {
