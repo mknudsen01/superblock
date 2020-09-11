@@ -7,6 +7,7 @@ export const CurrentBreakpointProvider = ({
   breakpoints = ["40em", "52em", "64em"],
   defaultWidth = 320,
   children,
+  observedWindow,
 }) => {
   const [width, setWidth] = useState(defaultWidth);
   const [currentBreakpoint, setCurrentBreakpoint] = useState(
@@ -14,13 +15,14 @@ export const CurrentBreakpointProvider = ({
   );
 
   useEffect(() => {
+    const windowToUse = observedWindow || window;
     function handleResize() {
-      setWidth(window.innerWidth);
+      setWidth(windowToUse.innerWidth);
     }
-    window.addEventListener("resize", handleResize);
+    windowToUse.addEventListener("resize", handleResize);
     handleResize();
     return () => {
-      window.removeEventListener("resize", handleResize);
+      windowToUse.removeEventListener("resize", handleResize);
     };
   }, []);
 
