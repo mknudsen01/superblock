@@ -50,11 +50,11 @@ export const getValueForBreakpoint = (values, breakpoint) => {
 };
 
 const getValue = (obj, pathOrValue) => get(obj, pathOrValue, pathOrValue);
-const getTranslate = (translate) => {
-  if (!translate || translate.length === 0) {
+const getTranslate = (x, y) => {
+  if (!x && !y) {
     return ``;
   }
-  return `translate(${translate[0] || 0}px, ${translate[1] || 0}px)`;
+  return `translate(${x}px, ${y}px)`;
 };
 const getScale = (scale) => {
   if (!scale) {
@@ -73,7 +73,8 @@ export const hover = (props) => {
   const {
     backgroundColor,
     color,
-    translate,
+    translateX,
+    translateY,
     scale,
     rotate,
     boxShadow,
@@ -85,7 +86,8 @@ export const hover = (props) => {
   if (
     !backgroundColor &&
     !color &&
-    !translate &&
+    !translateX &&
+    !translateY &&
     !scale &&
     !rotate &&
     !boxShadow &&
@@ -105,10 +107,10 @@ export const hover = (props) => {
       ...(!!boxShadow && {
         boxShadow: getValue(props.theme.shadows, boxShadow),
       }),
-      ...(!!(translate || scale || rotate) && {
-        transform: `${getTranslate(translate)} ${getScale(scale)} ${getRotate(
-          rotate
-        )}`,
+      ...(!!(translateX || translateY || scale || rotate) && {
+        transform: `${getTranslate(translateX, translateY)} ${getScale(
+          scale
+        )} ${getRotate(rotate)}`,
       }),
     },
   };

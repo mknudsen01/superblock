@@ -78,12 +78,12 @@ var getValue = function getValue(obj, pathOrValue) {
   return (0, _styledSystem.get)(obj, pathOrValue, pathOrValue);
 };
 
-var getTranslate = function getTranslate(translate) {
-  if (!translate || translate.length === 0) {
+var getTranslate = function getTranslate(x, y) {
+  if (!x && !y) {
     return "";
   }
 
-  return "translate(".concat(translate[0] || 0, "px, ").concat(translate[1] || 0, "px)");
+  return "translate(".concat(x, "px, ").concat(y, "px)");
 };
 
 var getScale = function getScale(scale) {
@@ -106,7 +106,8 @@ var hover = function hover(props) {
   var _ref = props.hover || {},
       backgroundColor = _ref.backgroundColor,
       color = _ref.color,
-      translate = _ref.translate,
+      translateX = _ref.translateX,
+      translateY = _ref.translateY,
       scale = _ref.scale,
       rotate = _ref.rotate,
       boxShadow = _ref.boxShadow,
@@ -117,7 +118,7 @@ var hover = function hover(props) {
       _ref$cursor = _ref.cursor,
       cursor = _ref$cursor === void 0 ? "auto" : _ref$cursor;
 
-  if (!backgroundColor && !color && !translate && !scale && !rotate && !boxShadow && cursor === "auto") {
+  if (!backgroundColor && !color && !translateX && !translateY && !scale && !rotate && !boxShadow && cursor === "auto") {
     return {};
   }
 
@@ -131,8 +132,8 @@ var hover = function hover(props) {
       color: getValue(props.theme.colors, color)
     }), !!boxShadow && {
       boxShadow: getValue(props.theme.shadows, boxShadow)
-    }), !!(translate || scale || rotate) && {
-      transform: "".concat(getTranslate(translate), " ").concat(getScale(scale), " ").concat(getRotate(rotate))
+    }), !!(translateX || translateY || scale || rotate) && {
+      transform: "".concat(getTranslate(translateX, translateY), " ").concat(getScale(scale), " ").concat(getRotate(rotate))
     })
   };
 };
