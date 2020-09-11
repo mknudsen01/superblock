@@ -10,9 +10,19 @@ import {
   shadow,
   layout,
 } from "styled-system";
+import { hover } from "../utils";
 
 const BoxNoForward = styled.div`
-  ${compose(typography, space, color, flexbox, background, shadow, layout)}
+  ${compose(
+    typography,
+    space,
+    color,
+    flexbox,
+    background,
+    shadow,
+    layout,
+    hover
+  )}
 `;
 
 export const Box = forwardRef((props, ref) => (

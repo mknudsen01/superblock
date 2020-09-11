@@ -13,6 +13,8 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _styledSystem = require("styled-system");
 
+var _utils = require("../utils");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -33,7 +35,7 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var BoxNoForward = _styledComponents["default"].div(_templateObject(), (0, _styledSystem.compose)(_styledSystem.typography, _styledSystem.space, _styledSystem.color, _styledSystem.flexbox, _styledSystem.background, _styledSystem.shadow, _styledSystem.layout));
+var BoxNoForward = _styledComponents["default"].div(_templateObject(), (0, _styledSystem.compose)(_styledSystem.typography, _styledSystem.space, _styledSystem.color, _styledSystem.flexbox, _styledSystem.background, _styledSystem.shadow, _styledSystem.layout, _utils.hover));
 
 var Box = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   return /*#__PURE__*/_react["default"].createElement(BoxNoForward, _extends({
