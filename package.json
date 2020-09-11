@@ -1,6 +1,6 @@
 {
   "name": "superblock",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "public components to use exported code from superblock",
   "main": "dist/index.js",
   "repository": "https://github.com/mknudsen01/superblock",
