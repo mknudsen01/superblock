@@ -60,7 +60,7 @@ exports.getCurrentBreakpointFromWidth = getCurrentBreakpointFromWidth;
 
 var getValueForBreakpoint = function getValueForBreakpoint(values, breakpoint) {
   if (!Array.isArray(values)) {
-    return 0;
+    return values;
   }
 
   for (var i = breakpoint; i >= 0; i--) {
@@ -78,7 +78,10 @@ var getValue = function getValue(obj, pathOrValue) {
   return (0, _styledSystem.get)(obj, pathOrValue, pathOrValue);
 };
 
-var getTranslate = function getTranslate(x, y) {
+var getTranslate = function getTranslate() {
+  var x = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+  var y = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+
   if (!x && !y) {
     return "";
   }

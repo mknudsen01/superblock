@@ -15,6 +15,8 @@ var _styledSystem = require("styled-system");
 
 var _utils = require("../utils");
 
+var _useBreakpointAwareProps = _interopRequireDefault(require("../hooks/useBreakpointAwareProps"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -52,5 +54,13 @@ var Heading = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, rest));
 });
 exports.Heading = Heading;
-var _default = Heading;
+
+var ExportableHeading = function ExportableHeading(props) {
+  var finalizedProps = (0, _useBreakpointAwareProps["default"])({
+    props: props
+  });
+  return /*#__PURE__*/_react["default"].createElement(Heading, finalizedProps);
+};
+
+var _default = ExportableHeading;
 exports["default"] = _default;
