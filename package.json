@@ -9,6 +9,9 @@
   "scripts": {
     "build": "./node_modules/.bin/babel src --out-dir dist"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "private": false,
   "dependencies": {},
   "peerDependencies": {
