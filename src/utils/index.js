@@ -47,3 +47,68 @@ export const getValueForBreakpoint = (values, breakpoint) => {
   }
   return values[0];
 };
+
+const getValue = (obj, pathOrValue) => get(obj, pathOrValue, pathOrValue);
+const getTranslate = (translate) => {
+  if (!translate || translate.length === 0) {
+    return ``;
+  }
+  return `translate(${translate[0] || 0}px, ${translate[1] || 0}px)`;
+};
+const getScale = (scale) => {
+  if (!scale) {
+    return ``;
+  }
+  return `scale(${scale})`;
+};
+const getRotate = (rotate) => {
+  if (!rotate) {
+    return ``;
+  }
+  return `rotate(${rotate})`;
+};
+
+export const hover = (props) => {
+  const {
+    backgroundColor,
+    color,
+    translate,
+    scale,
+    rotate,
+    boxShadow,
+    transitionDuration = "0.3s",
+    transitionTimingFunction = "ease",
+    cursor = "auto",
+  } = props.hover || {};
+
+  if (
+    !backgroundColor &&
+    !color &&
+    !translate &&
+    !scale &&
+    !rotate &&
+    !boxShadow &&
+    cursor === "auto"
+  ) {
+    return {};
+  }
+
+  return {
+    transition: `${transitionDuration} all ${transitionTimingFunction}`,
+    "&:hover": {
+      cursor,
+      ...(!!backgroundColor && {
+        backgroundColor: getValue(props.theme.colors, backgroundColor),
+      }),
+      ...(!!color && { color: getValue(props.theme.colors, color) }),
+      ...(!!boxShadow && {
+        boxShadow: getValue(props.theme.shadows, boxShadow),
+      }),
+      ...(!!(translate || scale || rotate) && {
+        transform: `${getTranslate(translate)} ${getScale(scale)} ${getRotate(
+          rotate
+        )}`,
+      }),
+    },
+  };
+};
