@@ -24,7 +24,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", "\n  ", "\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -35,10 +35,10 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var BoxNoForward = _styledComponents["default"].div(_templateObject(), (0, _styledSystem.compose)(_styledSystem.typography, _styledSystem.space, _styledSystem.color, _styledSystem.flexbox, _styledSystem.background, _styledSystem.shadow, _styledSystem.layout, _utils.hover));
+var _Box = _styledComponents["default"].div(_templateObject(), (0, _styledSystem.compose)(_styledSystem.typography, _styledSystem.space, _styledSystem.color, _styledSystem.flexbox, _styledSystem.background, _styledSystem.shadow, _styledSystem.layout), _utils.hover);
 
 var Box = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
-  return /*#__PURE__*/_react["default"].createElement(BoxNoForward, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_Box, _extends({
     ref: ref
   }, props));
 });

@@ -12,21 +12,11 @@ import {
 } from "styled-system";
 import { hover } from "../utils";
 
-const BoxNoForward = styled.div`
-  ${compose(
-    typography,
-    space,
-    color,
-    flexbox,
-    background,
-    shadow,
-    layout,
-    hover
-  )}
+const _Box = styled.div`
+  ${compose(typography, space, color, flexbox, background, shadow, layout)}
+  ${hover}
 `;
 
-export const Box = forwardRef((props, ref) => (
-  <BoxNoForward ref={ref} {...props} />
-));
+export const Box = forwardRef((props, ref) => <_Box ref={ref} {...props} />);
 
 export default Box;
