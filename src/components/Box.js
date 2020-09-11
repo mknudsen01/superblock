@@ -11,6 +11,7 @@ import {
   layout,
 } from "styled-system";
 import { hover } from "../utils";
+import useBreakpointAwareProps from "../hooks/useBreakpointAwareProps";
 
 const _Box = styled.div`
   ${compose(typography, space, color, flexbox, background, shadow, layout)}
@@ -19,4 +20,9 @@ const _Box = styled.div`
 
 export const Box = forwardRef((props, ref) => <_Box ref={ref} {...props} />);
 
-export default Box;
+const ExportableBox = (props) => {
+  const finalizedProps = useBreakpointAwareProps({ props });
+  return <Box {...finalizedProps} />;
+};
+
+export default ExportableBox;

@@ -1,9 +1,9 @@
 import useCurrentBreakpoint from "./useCurrentBreakpoint";
 import { getValueForBreakpoint } from "../utils";
+import { HOVER_PROPS } from "../constants";
 
-const useBreakpointAwareProps = ({ props = {}, breakpointProps = [] }) => {
-  const breakpoint = useCurrentBreakpoint();
-  const finalizedProps = Object.keys(props).reduce((acc, propName) => {
+const getPropsForBreakpoint = ({ props, breakpointProps, breakpoint }) => {
+  return Object.keys(props).reduce((acc, propName) => {
     if (breakpointProps.includes(propName)) {
       return {
         ...acc,
@@ -16,8 +16,25 @@ const useBreakpointAwareProps = ({ props = {}, breakpointProps = [] }) => {
       [propName]: props[propName],
     };
   }, {});
+};
 
-  return finalizedProps;
+const useBreakpointAwareProps = ({ props = {}, breakpointProps = [] }) => {
+  const breakpoint = useCurrentBreakpoint();
+  const { hover: hoverProps = {}, ...nonHoverProps } = props;
+  const finalizedProps = getPropsForBreakpoint({
+    props: nonHoverProps,
+    breakpointProps,
+    breakpoint,
+  });
+  const finalizedHoverProps = getPropsForBreakpoint({
+    props: hoverProps,
+    breakpointProps: HOVER_PROPS,
+    breakpoint,
+  });
+  return {
+    ...finalizedProps,
+    hover: finalizedHoverProps,
+  };
 };
 
 export default useBreakpointAwareProps;

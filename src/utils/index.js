@@ -39,7 +39,7 @@ export const getCurrentBreakpointFromWidth = (width, breakpoints) => {
 
 export const getValueForBreakpoint = (values, breakpoint) => {
   if (!Array.isArray(values)) {
-    return 0;
+    return values;
   }
   for (let i = breakpoint; i >= 0; i--) {
     if (isDefined(values[i])) {
@@ -50,7 +50,7 @@ export const getValueForBreakpoint = (values, breakpoint) => {
 };
 
 const getValue = (obj, pathOrValue) => get(obj, pathOrValue, pathOrValue);
-const getTranslate = (x, y) => {
+const getTranslate = (x = 0, y = 0) => {
   if (!x && !y) {
     return ``;
   }
