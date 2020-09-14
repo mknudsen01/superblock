@@ -78,7 +78,7 @@ export const hover = (props) => {
     scale,
     rotate,
     boxShadow,
-    transitionDuration = "0.3s",
+    transitionDuration = 0.3,
     transitionTimingFunction = "ease",
     cursor = "auto",
   } = props.hover || {};
@@ -97,7 +97,7 @@ export const hover = (props) => {
   }
 
   return {
-    transition: `${transitionDuration} all ${transitionTimingFunction}`,
+    transition: `${transitionDuration}s all ${transitionTimingFunction}`,
     "&:hover": {
       cursor,
       ...(!!backgroundColor && {
