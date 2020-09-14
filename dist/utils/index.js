@@ -115,7 +115,7 @@ var hover = function hover(props) {
       rotate = _ref.rotate,
       boxShadow = _ref.boxShadow,
       _ref$transitionDurati = _ref.transitionDuration,
-      transitionDuration = _ref$transitionDurati === void 0 ? "0.3s" : _ref$transitionDurati,
+      transitionDuration = _ref$transitionDurati === void 0 ? 0.3 : _ref$transitionDurati,
       _ref$transitionTiming = _ref.transitionTimingFunction,
       transitionTimingFunction = _ref$transitionTiming === void 0 ? "ease" : _ref$transitionTiming,
       _ref$cursor = _ref.cursor,
@@ -126,7 +126,7 @@ var hover = function hover(props) {
   }
 
   return {
-    transition: "".concat(transitionDuration, " all ").concat(transitionTimingFunction),
+    transition: "".concat(transitionDuration, "s all ").concat(transitionTimingFunction),
     "&:hover": _objectSpread(_objectSpread(_objectSpread(_objectSpread({
       cursor: cursor
     }, !!backgroundColor && {
