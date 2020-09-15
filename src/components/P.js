@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import styled from "styled-components";
-import { layout, typography, space, color } from "styled-system";
+import { shadow, layout, typography, space, color } from "styled-system";
 import { hover } from "../utils";
 
 const PNoForward = styled.p`
@@ -8,6 +8,7 @@ const PNoForward = styled.p`
   ${space}
   ${color}
   ${layout}
+  ${shadow}
   ${hover}
 `;
 

@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import styled from "styled-components";
-import { typography, space, color, layout } from "styled-system";
+import { shadow, typography, space, color, layout } from "styled-system";
 import { hover } from "../utils";
 import useBreakpointAwareProps from "../hooks/useBreakpointAwareProps";
 
@@ -9,6 +9,7 @@ const HeadingNoForward = styled.h2`
   ${space}
   ${color}
   ${layout}
+  ${shadow}
   ${hover}
 `;
 
