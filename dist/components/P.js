@@ -24,7 +24,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -35,7 +35,7 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var PNoForward = _styledComponents["default"].p(_templateObject(), _styledSystem.typography, _styledSystem.space, _styledSystem.color, _styledSystem.layout, _utils.hover);
+var PNoForward = _styledComponents["default"].p(_templateObject(), _styledSystem.typography, _styledSystem.space, _styledSystem.color, _styledSystem.layout, _styledSystem.shadow, _utils.hover);
 
 var P = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   return /*#__PURE__*/_react["default"].createElement(PNoForward, _extends({
