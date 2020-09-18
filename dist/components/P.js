@@ -35,10 +35,10 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var PNoForward = _styledComponents["default"].p(_templateObject(), _styledSystem.typography, _styledSystem.space, _styledSystem.color, _styledSystem.layout, _styledSystem.shadow, _utils.hover);
+var _P = _styledComponents["default"].p(_templateObject(), _styledSystem.typography, _styledSystem.space, _styledSystem.color, _styledSystem.layout, _styledSystem.shadow, _utils.hover);
 
 var P = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
-  return /*#__PURE__*/_react["default"].createElement(PNoForward, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_P, _extends({
     ref: ref
   }, props));
 });

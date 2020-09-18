@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = exports.Heading = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -41,26 +41,20 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var HeadingNoForward = _styledComponents["default"].h2(_templateObject(), _styledSystem.typography, _styledSystem.space, _styledSystem.color, _styledSystem.layout, _styledSystem.shadow, _utils.hover);
+var _Heading = _styledComponents["default"].h2(_templateObject(), _styledSystem.typography, _styledSystem.space, _styledSystem.color, _styledSystem.layout, _styledSystem.shadow, _utils.hover);
 
 var Heading = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var _ref$headingLevel = _ref.headingLevel,
       headingLevel = _ref$headingLevel === void 0 ? 2 : _ref$headingLevel,
       rest = _objectWithoutProperties(_ref, ["headingLevel"]);
 
-  return /*#__PURE__*/_react["default"].createElement(HeadingNoForward, _extends({
+  var finalizedProps = (0, _useBreakpointAwareProps["default"])({
+    props: rest
+  });
+  return /*#__PURE__*/_react["default"].createElement(_Heading, _extends({
     as: "h".concat(headingLevel),
     ref: ref
-  }, rest));
+  }, finalizedProps));
 });
-exports.Heading = Heading;
-
-var ExportableHeading = function ExportableHeading(props) {
-  var finalizedProps = (0, _useBreakpointAwareProps["default"])({
-    props: props
-  });
-  return /*#__PURE__*/_react["default"].createElement(Heading, finalizedProps);
-};
-
-var _default = ExportableHeading;
+var _default = Heading;
 exports["default"] = _default;

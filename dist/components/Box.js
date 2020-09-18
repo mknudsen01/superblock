@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = exports.Box = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -40,18 +40,12 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var _Box = _styledComponents["default"].div(_templateObject(), (0, _styledSystem.compose)(_styledSystem.typography, _styledSystem.space, _styledSystem.color, _styledSystem.flexbox, _styledSystem.background, _styledSystem.shadow, _styledSystem.layout), _utils.hover);
 
 var Box = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
-  return /*#__PURE__*/_react["default"].createElement(_Box, _extends({
-    ref: ref
-  }, props));
-});
-exports.Box = Box;
-
-var ExportableBox = function ExportableBox(props) {
   var finalizedProps = (0, _useBreakpointAwareProps["default"])({
     props: props
   });
-  return /*#__PURE__*/_react["default"].createElement(Box, finalizedProps);
-};
-
-var _default = ExportableBox;
+  return /*#__PURE__*/_react["default"].createElement(_Box, _extends({
+    ref: ref
+  }, finalizedProps));
+});
+var _default = Box;
 exports["default"] = _default;

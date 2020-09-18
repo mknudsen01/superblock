@@ -11,7 +11,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _Box = require("./Box");
+var _Box = _interopRequireDefault(require("./Box"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -33,9 +33,10 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var FlexNoForward = (0, _styledComponents["default"])(_Box.Box)(_templateObject());
+var _Flex = (0, _styledComponents["default"])(_Box["default"])(_templateObject());
+
 var Flex = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
-  return /*#__PURE__*/_react["default"].createElement(FlexNoForward, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_Flex, _extends({
     ref: ref
   }, props));
 });

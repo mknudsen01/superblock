@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = exports.Image = void 0;
+exports["default"] = exports._Image = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -84,7 +84,7 @@ var StyledImage = _styledComponents["default"].img(_templateObject3(), function 
   return props.hasBlur ? "blur(5px)" : "none";
 });
 
-var Image = function Image(props) {
+var _Image = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   var _useState = (0, _react.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       isLoaded = _useState2[0],
@@ -107,7 +107,9 @@ var Image = function Image(props) {
       aspectRatio = props.aspectRatio,
       rest = _objectWithoutProperties(props, ["src", "alt", "imgHeight", "onClick", "imgWidth", "smallSrc", "className", "imagePositionY", "aspectRatio"]);
 
-  return /*#__PURE__*/_react["default"].createElement(Wrapper, _extends({}, rest, {
+  return /*#__PURE__*/_react["default"].createElement(Wrapper, _extends({
+    ref: ref
+  }, rest, {
     aspectRatio: aspectRatio,
     className: className,
     onClick: onClick
@@ -129,17 +131,17 @@ var Image = function Image(props) {
       setIsLoaded(true);
     }
   })));
-};
+});
 
-exports.Image = Image;
-
-var ExportableImage = function ExportableImage(props) {
+exports._Image = _Image;
+var Image = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   var finalizedProps = (0, _useBreakpointAwareProps["default"])({
     props: props,
     breakpointProps: ["src", "smallSrc", "imgHeight", "imgWidth", "imagePositionY", "aspectRatio", "alt"]
   });
-  return /*#__PURE__*/_react["default"].createElement(Image, finalizedProps);
-};
-
-var _default = ExportableImage;
+  return /*#__PURE__*/_react["default"].createElement(_Image, _extends({
+    ref: ref
+  }, finalizedProps));
+});
+var _default = Image;
 exports["default"] = _default;
