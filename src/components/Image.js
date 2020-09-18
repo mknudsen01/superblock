@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, forwardRef } from "react";
 import styled from "styled-components";
 import Box from "./Box";
 import useBreakpointAwareProps from "../hooks/useBreakpointAwareProps";
@@ -25,7 +25,7 @@ const StyledImage = styled.img`
   filter: ${(props) => (props.hasBlur ? "blur(5px)" : "none")};
 `;
 
-export const Image = (props) => {
+export const _Image = forwardRef((props, ref) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isSmallLoaded, setIsSmallLoaded] = useState(false);
   const {
@@ -43,6 +43,7 @@ export const Image = (props) => {
 
   return (
     <Wrapper
+      ref={ref}
       {...rest}
       aspectRatio={aspectRatio}
       className={className}
@@ -71,9 +72,9 @@ export const Image = (props) => {
       </BlurHider>
     </Wrapper>
   );
-};
+});
 
-const ExportableImage = (props) => {
+const Image = forwardRef((props, ref) => {
   const finalizedProps = useBreakpointAwareProps({
     props,
     breakpointProps: [
@@ -86,7 +87,7 @@ const ExportableImage = (props) => {
       "alt",
     ],
   });
-  return <Image {...finalizedProps} />;
-};
+  return <_Image ref={ref} {...finalizedProps} />;
+});
 
-export default ExportableImage;
+export default Image;

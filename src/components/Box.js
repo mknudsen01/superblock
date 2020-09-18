@@ -18,11 +18,9 @@ const _Box = styled.div`
   ${hover}
 `;
 
-export const Box = forwardRef((props, ref) => <_Box ref={ref} {...props} />);
-
-const ExportableBox = (props) => {
+const Box = forwardRef((props, ref) => {
   const finalizedProps = useBreakpointAwareProps({ props });
-  return <Box {...finalizedProps} />;
-};
+  return <_Box ref={ref} {...finalizedProps} />;
+});
 
-export default ExportableBox;
+export default Box;

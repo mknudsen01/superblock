@@ -4,7 +4,7 @@ import { shadow, typography, space, color, layout } from "styled-system";
 import { hover } from "../utils";
 import useBreakpointAwareProps from "../hooks/useBreakpointAwareProps";
 
-const HeadingNoForward = styled.h2`
+const _Heading = styled.h2`
   ${typography}
   ${space}
   ${color}
@@ -13,13 +13,9 @@ const HeadingNoForward = styled.h2`
   ${hover}
 `;
 
-export const Heading = forwardRef(({ headingLevel = 2, ...rest }, ref) => {
-  return <HeadingNoForward as={`h${headingLevel}`} ref={ref} {...rest} />;
+const Heading = forwardRef(({ headingLevel = 2, ...rest }, ref) => {
+  const finalizedProps = useBreakpointAwareProps({ props: rest });
+  return <_Heading as={`h${headingLevel}`} ref={ref} {...finalizedProps} />;
 });
 
-const ExportableHeading = (props) => {
-  const finalizedProps = useBreakpointAwareProps({ props });
-  return <Heading {...finalizedProps} />;
-};
-
-export default ExportableHeading;
+export default Heading;

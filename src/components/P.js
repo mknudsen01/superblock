@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { shadow, layout, typography, space, color } from "styled-system";
 import { hover } from "../utils";
 
-const PNoForward = styled.p`
+const _P = styled.p`
   ${typography}
   ${space}
   ${color}
@@ -12,8 +12,6 @@ const PNoForward = styled.p`
   ${hover}
 `;
 
-export const P = forwardRef((props, ref) => (
-  <PNoForward ref={ref} {...props} />
-));
+export const P = forwardRef((props, ref) => <_P ref={ref} {...props} />);
 
 export default P;
